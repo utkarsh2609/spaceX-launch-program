@@ -1,2 +1,4 @@
-<p>main-section works!</p>
-<app-launch-card></app-launch-card>
+<div class="main-section">
+    <app-launch-card *ngFor='let launch of launchList' [launch]='launch'></app-launch-card>
+</div>
+
