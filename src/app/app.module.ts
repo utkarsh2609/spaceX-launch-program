@@ -7,13 +7,15 @@ import { LaunchCardComponent } from './launch-card/launch-card.component';
 import { MainSectionComponent } from './main-section/main-section.component';
 import { FiltersComponent } from './filters/filters.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ChipButtonComponent } from './chip-button/chip-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LaunchCardComponent,
     MainSectionComponent,
-    FiltersComponent
+    FiltersComponent,
+    ChipButtonComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,22 @@
+.chip-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    .chip {
+        width: 80px;
+        background: #0aa30a5c;
+        border-radius: 5px;
+        text-align: center;
+        margin: 2px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.selected-chip {
+    background: green !important;
+}

@@ -1,1 +1,17 @@
-<p>filters works!</p>
+<div class="filter-card">
+    <div class="filter-card-title">Filters</div>
+<!-- Launch Year Filters -->
+    <div class="filter-section-title"> Launch Year </div>
+    <app-chip-button [chips]="LAUNCH_YEAR" [initialChips]='selectedLaunchYear'
+        (chipSelected)="onChipSelected($event,1)"></app-chip-button>
+
+<!-- Successful Landing Filters -->
+    <div class="filter-section-title"> Successful Launch </div>
+    <app-chip-button [chips]="SUCCESSFUL_LAUNCH" [initialChips]='selectedSuccessfulLaunch'
+        (chipSelected)="onChipSelected($event,2)"></app-chip-button>
+
+<!-- Successful Launch Filters -->
+    <div class="filter-section-title"> Successful Landing </div>
+    <app-chip-button [chips]="SUCCESSFUL_LANDING" [initialChips]='selectedSuccessfulLanding'
+        (chipSelected)="onChipSelected($event,3)"></app-chip-button>
+</div>

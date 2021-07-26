@@ -11,7 +11,6 @@ export class LaunchCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('INn Card', this.launch)
   }
 
 }

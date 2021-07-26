@@ -1,0 +1,27 @@
+.filter-card {
+    width: 200px;
+    min-height: 400px;
+    background: white;
+    border-radius: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+
+    .filter-card-title {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .filter-section-title {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        border-bottom: 1px solid #cccccc91;
+        color: #626262;
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+}

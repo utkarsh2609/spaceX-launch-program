@@ -1,0 +1,5 @@
+<div class="chip-list">
+    <div class="chip" [ngClass]="{'selected-chip': chipCollection.get(chip)}" *ngFor="let chip of chips" (click)="onClick($event, chip)">
+        <span>{{chip.name}}</span>
+    </div>
+</div>
