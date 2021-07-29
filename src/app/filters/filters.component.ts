@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FilterChip } from '../models/filter-chip.model';
+import { LaunchFilters } from '../models/launch-filters.model';
+import { LaunchService } from '../services/launch.service';
 
 @Component({
   selector: 'app-filters',
@@ -9,6 +11,7 @@ import { FilterChip } from '../models/filter-chip.model';
 export class FiltersComponent implements OnInit {
   today = new Date().getFullYear();
   LAUNCH_YEAR: FilterChip[] = [];
+  appliedFilters = new LaunchFilters();
   selectedLaunchYear = new Array();
   selectedSuccessfulLaunch = new Array();
   selectedSuccessfulLanding = new Array();
@@ -21,7 +24,9 @@ export class FiltersComponent implements OnInit {
     { name: 'False', value: false }
   ];
 
-  constructor() { }
+  constructor(
+    private _launchService: LaunchService
+  ) { }
 
   ngOnInit(): void {
     for (let i = 2006; i <= this.today; i++) {
@@ -34,11 +39,16 @@ export class FiltersComponent implements OnInit {
      * @param chips selected
      */
   onChipSelected(chips: any[], type: FilterType) {
-    let selectedArray = type === FilterType.year ? this.selectedLaunchYear : type === FilterType.launch ? this.selectedSuccessfulLaunch : this.selectedSuccessfulLanding;
     const selected: any[] = [];
     chips.forEach(chip => selected.push(chip.value));
-    console.log('SELECTED CHIPS', selected)
-    selectedArray = selected;
+    if (type === FilterType.year) {
+      this.appliedFilters.year = selected;
+    } else if (type === FilterType.landing) {
+      this.appliedFilters.land = selected;
+    } else {
+      this.appliedFilters.launch = selected;
+    }
+    this._launchService.appliedFilters.next(this.appliedFilters);
   }
 
 }

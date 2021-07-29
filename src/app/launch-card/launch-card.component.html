@@ -11,10 +11,11 @@
             <span class="detail-label">Launch Year:</span> {{launch.launch_year}}
         </div>
         <div class="detail-row">
-            <span class="detail-label">Successful Launch:</span> {{launch.launch_success}}
+            <span class="detail-label">Successful Launch:</span> {{launch.launch_success.toString() | titlecase }}
         </div>
         <div class="detail-row">
-            <span class="detail-label">Successful Landing:</span> {{launch.launch_success}}
+            <span class="detail-label">Successful Landing:</span> {{launch.rocket.first_stage.cores[0].land_success ?
+            'True' : 'False'}}
         </div>
     </div>
 </div>
