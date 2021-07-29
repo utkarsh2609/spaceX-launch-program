@@ -1,13 +1,14 @@
 .filter-card {
-    width: 200px;
+    width: 218px;
     min-height: 400px;
     background: white;
     border-radius: 2%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: flex-start;
+    // justify-content: flex-start;
     padding: 10px;
+    margin-top: 5px;
 
     .filter-card-title {
         font-size: 22px;
