@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainSectionComponent } from './main-section/main-section.component';
 
 const routes: Routes = [
-  {path: '', pathMatch:'full', redirectTo: 'home'},
-  {path: 'home', component: MainSectionComponent}
+  // {path: '', pathMatch:'full', redirectTo: 'home'},
+  // {path: 'home', component: MainSectionComponent}
 ];
 
 @NgModule({
