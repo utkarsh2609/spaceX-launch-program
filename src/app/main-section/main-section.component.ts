@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Mission } from '../models/mission.model';
-import { Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, takeUntil } from 'rxjs/operators';
 import { LaunchService } from '../services/launch.service';
 import { LaunchFilters } from '../models/launch-filters.model';
@@ -14,6 +14,7 @@ export class MainSectionComponent implements OnInit, OnDestroy {
   launchList = new Array<Mission>();
   minLaunchYear: number = 2002;
   onDestroy = new Subject<void>();
+  subscription: Subscription = new Subscription();
 
   constructor(
     private _launchService: LaunchService
@@ -33,7 +34,7 @@ export class MainSectionComponent implements OnInit, OnDestroy {
   }
 
   private getSpaceMissionList(appliedFilters : LaunchFilters) {
-    this._launchService.getAllLaunches(appliedFilters)
+    this.subscription = this._launchService.getAllLaunches(appliedFilters)
       .subscribe(
         launches => {
           this.launchList = launches;
@@ -50,6 +51,7 @@ export class MainSectionComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.onDestroy.next();
     this.onDestroy.complete();
+    this.subscription.unsubscribe();
   }
 
 }

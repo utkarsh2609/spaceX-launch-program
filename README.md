@@ -1,6 +1,7 @@
 # SpaceXAssignment
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
+A live version can be found [here](https://space-x-app-assignment.herokuapp.com/)
 
 ## Development server
 
